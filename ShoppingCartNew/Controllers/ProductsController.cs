@@ -94,6 +94,15 @@ namespace ShoppingCartNew.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
+                //try
+                //{
+                //    db.SaveChanges();
+                //}
+                //catch (OptimisticConcurrencyException)
+                //{
+                //    db.Refresh(RefreshMode.ClientWins, db.Products);
+                //    db.SaveChanges();
+                //}
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
