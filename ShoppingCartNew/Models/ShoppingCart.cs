@@ -49,7 +49,7 @@ namespace ShoppingCartNew.Models
             // Save changes
             storeDB.SaveChanges();
         }
-        
+
         public int RemoveFromCart(int id)
         {
             // Get the cart
