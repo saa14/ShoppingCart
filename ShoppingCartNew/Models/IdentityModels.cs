@@ -35,5 +35,7 @@ namespace ShoppingCartNew.Models
         public System.Data.Entity.DbSet<ShoppingCartNew.Models.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<ShoppingCartNew.Models.CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }
