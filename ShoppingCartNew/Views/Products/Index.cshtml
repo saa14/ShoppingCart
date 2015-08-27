@@ -1,60 +1,111 @@
 ﻿@model IEnumerable<ShoppingCartNew.Models.Product>
 
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th></th>
+        </tr>*@
+    @foreach (var item in Model)
+    {
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="@Url.Content(item.ImagePath)" class="img-responsive" />
+                    <div class="caption">
+                        <h3>@Html.DisplayFor(modelItem => item.ProductName)</h3>
+                        Desciption:<p>@Html.DisplayFor(modelItem => item.Description)</p>
+                        category name:<p>@Html.DisplayFor(modelItem => item.Category.CategoryName)</p>
+                        Price :<p> @Html.DisplayFor(modelItem => item.UnitPrice)</p>
+                        <p class="btn btn-default">
+                            @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCart", new { id = item.ProductID }, "")</p>
+                        @*<p><a href="#" class="btn btn-primary" role="button">Add To Cart</a>*@ <p><a href="#" class="btn btn-default" role="button">View Description</a>
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+    @*@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })|
+                @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCart", new { id=item.ProductID},"")
+
+            </td>
+        </tr>*@
+@*@model IEnumerable<WebApplication4.Models.Product>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "listofavailable";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>listofavailable</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UnitPrice)
-        </th>
-        <th></th>
-    </tr>
+@foreach (var item in Model)
+{
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.CategoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitPrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })|
-            @Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCart", new { id=item.ProductID},"")
-        
-        </td>
-    </tr>
-}
 
-</table>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="@Url.Content(item.ImagePath)" class="img-responsive" />
+                <div class="caption">
+                    <h3>@Html.DisplayFor(modelItem => item.ProductName)</h3>
+                    Desciption:<p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    category name:<p>@Html.DisplayFor(modelItem => item.Category.CategoryName)</p>
+                    Price :<p> @Html.DisplayFor(modelItem => item.UnitPrice)</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a> <a href="#" class="btn btn-default" role="button">View Description</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}*@
