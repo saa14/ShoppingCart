@@ -165,6 +165,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="CustomFilters\AuthLogAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,26 @@
     <Compile Include="Migrations\201508260628466_InitialCreate1.cs" />
     <Compile Include="Migrations\201508260628466_InitialCreate1.Designer.cs">
       <DependentUpon>201508260628466_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508270412248_InitialCreate2.cs" />
+    <Compile Include="Migrations\201508270412248_InitialCreate2.Designer.cs">
+      <DependentUpon>201508270412248_InitialCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508270449523_InitialCreate3.cs" />
+    <Compile Include="Migrations\201508270449523_InitialCreate3.Designer.cs">
+      <DependentUpon>201508270449523_InitialCreate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508270505130_InitialCreate4.cs" />
+    <Compile Include="Migrations\201508270505130_InitialCreate4.Designer.cs">
+      <DependentUpon>201508270505130_InitialCreate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508270522137_InitialCreate5.cs" />
+    <Compile Include="Migrations\201508270522137_InitialCreate5.Designer.cs">
+      <DependentUpon>201508270522137_InitialCreate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508270618419_InitialCreate6.cs" />
+    <Compile Include="Migrations\201508270618419_InitialCreate6.Designer.cs">
+      <DependentUpon>201508270618419_InitialCreate6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -189,6 +210,8 @@
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -264,6 +287,7 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +305,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508260628466_InitialCreate1.resx">
       <DependentUpon>201508260628466_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508270412248_InitialCreate2.resx">
+      <DependentUpon>201508270412248_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508270449523_InitialCreate3.resx">
+      <DependentUpon>201508270449523_InitialCreate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508270505130_InitialCreate4.resx">
+      <DependentUpon>201508270505130_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508270522137_InitialCreate5.resx">
+      <DependentUpon>201508270522137_InitialCreate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508270618419_InitialCreate6.resx">
+      <DependentUpon>201508270618419_InitialCreate6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShoppingCartNew.Models
 {
     public class ShoppingCart
     {
         ApplicationDbContext storeDB = new ApplicationDbContext();
+       
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
         public static ShoppingCart GetCart(HttpContextBase context)
@@ -45,18 +47,14 @@ namespace ShoppingCartNew.Models
                 // If the item does exist in the cart, then add one to the quantity
                 cartItem.Quantity++;
             }
-
-            // Save changes
-            storeDB.SaveChanges();
+         
         }
 
         public int RemoveFromCart(int id)
         {
             // Get the cart
             var cartItem = storeDB.CartItems.Single(cart => cart.CartId == ShoppingCartId && cart.CartItemId == id);
-
             int itemCount = 0;
-
             if (cartItem != null)
             {
                 if (cartItem.Quantity > 1)
